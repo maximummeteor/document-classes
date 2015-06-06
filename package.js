@@ -17,6 +17,7 @@ Package.onUse(function(api) {
     'lib/mixins.coffee',
     'lib/mixins/update.coffee',
     'lib/mixins/remove.coffee',
+    'lib/mixins/schema.coffee',
   ]);
 
   api.export('DocumentClass');
@@ -26,6 +27,7 @@ Package.onTest(function(api) {
   api.use([
     'tinytest',
     'coffeescript',
+    'aldeed:collection2@2.3.3',
     'maximum:document-classes'
   ]);
   api.addFiles('tests/coffeescript.coffee');

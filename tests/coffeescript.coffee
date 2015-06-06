@@ -38,3 +38,17 @@ Tinytest.add prefixTest('mixins - update'), (test) ->
   post.update $set: test: true
 
   test.isTrue Posts.findOne(id)?.test
+
+Tinytest.add prefixTest('mixins - schema'), (test) ->
+  Posts = new Mongo.Collection null
+
+  class Post extends DocumentClass.Base
+    @isTransformOf Posts
+    @mixin 'schema'
+    @schema new SimpleSchema
+      name:
+        type: String
+
+  id = Posts.insert name: 'test', test: true
+
+  test.isFalse Posts.findOne(id)?.test
