@@ -1,4 +1,4 @@
-prefixTest = (name) -> "[Coffeescript] Document-Classes - #{name}"
+prefixTest = (name) -> "Document-Classes - Coffeescript - #{name}"
 
 Tinytest.add prefixTest('transform'), (test) ->
   Posts = new Mongo.Collection null
