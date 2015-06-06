@@ -19,6 +19,7 @@ Package.onUse(function(api) {
     'lib/mixins/update.coffee',
     'lib/mixins/remove.coffee',
     'lib/mixins/schema.coffee',
+    'lib/mixins/collection.coffee',
     'lib/baseclass.coffee',
   ]);
 

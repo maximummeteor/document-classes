@@ -52,3 +52,15 @@ Tinytest.add prefixTest('mixins - schema'), (test) ->
   id = Posts.insert name: 'test', test: true
 
   test.isFalse Posts.findOne(id)?.test
+
+Tinytest.add prefixTest('mixins - collection'), (test) ->
+  class Post extends DocumentClass.Base
+    @mixin 'collection'
+    @collection -> new Mongo.Collection null
+
+  Posts = Post.Collection()
+
+  id = Posts.insert name: 'test'
+  post = Posts.findOne id
+
+  test.isTrue post instanceof Post
