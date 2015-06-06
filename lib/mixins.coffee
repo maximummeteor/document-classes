@@ -1,7 +1,7 @@
 DocumentClass.Mixins =
   _mixins: {}
-  get: (name) => DocumentClass.Mixins._mixins[name]
-  add: (name, obj) => DocumentClass.Mixins._mixins[name] = obj
+  get: (name) -> DocumentClass.Mixins._mixins[name]
+  add: (name, obj) -> DocumentClass.Mixins._mixins[name] = obj
 
 DocumentClass.Mixins.Base = class MixinBase
   @applyMixin: (obj) ->
