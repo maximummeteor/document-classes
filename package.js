@@ -12,11 +12,11 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles([
-    'namespace.coffee',
-    'baseclass.coffee',
-    'mixins.coffee',
-    'mixins/update.coffee',
-    'mixins/remove.coffee',
+    'lib/namespace.coffee',
+    'lib/baseclass.coffee',
+    'lib/mixins.coffee',
+    'lib/mixins/update.coffee',
+    'lib/mixins/remove.coffee',
   ]);
 
   api.export('DocumentClass');
