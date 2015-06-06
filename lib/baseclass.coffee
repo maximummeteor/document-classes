@@ -1,11 +1,10 @@
 DocumentClass.Base = class Base
+  @defaultMixins: ['transform']
   @mixin: (mixins...) ->
-    DocumentClass.Mixins.get(mixin)?.applyMixin this for mixin in mixins
+    for mixin in mixins
+      mixins = _.unique mixins.concat mixin.dependsOn or []
 
-  @isTransformOf: (collection) ->
-    @_collection = collection
-    collection.transformTo this
+    DocumentClass.Mixins.get(mixin)?.applyMixin this for mixin in mixins
+  @mixin @defaultMixins
 
   constructor: (doc) -> _.extend this, doc
-
-  _collection: -> @constructor._collection

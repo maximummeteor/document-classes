@@ -8,16 +8,18 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   api.use([
     'coffeescript',
+    'underscore',
     'maximum:transformto@1.0.0',
   ]);
 
   api.addFiles([
     'lib/namespace.coffee',
-    'lib/baseclass.coffee',
     'lib/mixins.coffee',
+    'lib/mixins/transform.coffee',
     'lib/mixins/update.coffee',
     'lib/mixins/remove.coffee',
     'lib/mixins/schema.coffee',
+    'lib/baseclass.coffee',
   ]);
 
   api.export('DocumentClass');
