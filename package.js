@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'team:document-class',
+  name: 'maximum:document-classes',
   summary: 'Provides ability to add transform-classes to a collection',
   version: '0.1.0'
 });
@@ -20,4 +20,13 @@ Package.onUse(function(api) {
   ]);
 
   api.export('DocumentClass');
+});
+
+Package.onTest(function(api) {
+  api.use([
+    'tinytest',
+    'coffeescript',
+    'maximum:document-classes'
+  ]);
+  api.addFiles('tests/coffeescript.coffee');
 });
