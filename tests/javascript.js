@@ -75,7 +75,6 @@ Tinytest.add(prefixTest('mixins - schema'), function(test) {
 });
 Tinytest.add(prefixTest('mixins - collection'), function(test) {
   var Post = DocumentClass.Base.extend(function(){
-    this.isTransformOf(Posts);
     this.mixin('collection');
     this.collection(function(){
       return new Mongo.Collection(null);
@@ -83,7 +82,7 @@ Tinytest.add(prefixTest('mixins - collection'), function(test) {
     return this;
   });
 
-  var Posts = new Post.Collection();
+  var Posts = Post.Collection();
 
   var id = Posts.insert({name: 'test'});
   var post = Posts.findOne(id);
