@@ -24,7 +24,7 @@ Post.isTransformOf Posts
 mostly you'll have one class for one collection. In this case, you can use the 'collection' mixin.
 ````coffeescript
 class Post extends DocumentClass.Base
-  @mixins 'collection'
+  @mixin 'collection'
   @collection ->
     # with the collection function, you can define the
     # instantiation of the collection for this class.
@@ -64,7 +64,7 @@ document classes are extensible with mixins. You can add mixins, with `Class.mix
 ````coffeescript
 class Post extends DocumentClass.Base
   # the mixins function takes one or multiple mixin-names
-  @mixins 'collection', 'schema'
+  @mixin 'collection', 'schema'
   # you can also pass an array of mixins, instead of multiple parameters
 ````
 #### Default mixins
@@ -81,7 +81,7 @@ provides the ability to define a collection for a class.
 example:
 ````coffeescript
 class Post extends DocumentClass.Base
-  @mixins 'collection'
+  @mixin 'collection'
   @collection ->
     # with the collection function, you can define the
     # instantiation of the collection for this class.
