@@ -1,7 +1,13 @@
 DocumentClass.Mixins =
   _mixins: {}
-  get: (name) -> DocumentClass.Mixins._mixins[name]
-  add: (name, obj) -> DocumentClass.Mixins._mixins[name] = obj
+  get: (name, throwError=true) ->
+    if throwError and not DocumentClass.Mixins._mixins[name]?
+      throw new Error "mixin '#{name}' not found!"
+    return DocumentClass.Mixins._mixins[name]
+  add: (name, obj) ->
+    if DocumentClass.Mixins.get(name, false)?
+      throw new Error "mixin '#{name}' already exists!"
+    DocumentClass.Mixins._mixins[name] = obj
 
 DocumentClass.Mixins.Base = class MixinBase
   @applyMixin: (obj) ->
