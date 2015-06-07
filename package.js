@@ -9,6 +9,7 @@ Package.onUse(function(api) {
   api.use([
     'coffeescript',
     'underscore',
+    'check',
     'maximum:transformto@1.0.0',
   ]);
 

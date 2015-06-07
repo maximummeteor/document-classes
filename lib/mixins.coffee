@@ -5,6 +5,9 @@ DocumentClass.Mixins =
       throw new Error "mixin '#{name}' not found!"
     return DocumentClass.Mixins._mixins[name]
   add: (name, obj) ->
+    check name, String
+    check obj, Function
+
     if DocumentClass.Mixins.get(name, false)?
       throw new Error "mixin '#{name}' already exists!"
     DocumentClass.Mixins._mixins[name] = obj
