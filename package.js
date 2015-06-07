@@ -34,4 +34,5 @@ Package.onTest(function(api) {
     'maximum:document-classes'
   ]);
   api.addFiles('tests/coffeescript.coffee');
+  api.addFiles('tests/javascript.js');
 });

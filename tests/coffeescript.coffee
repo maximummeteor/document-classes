@@ -11,6 +11,7 @@ Tinytest.add prefixTest('transform'), (test) ->
   post = Posts.findOne id
 
   test.isTrue post instanceof Post
+  test.isTrue post.test()
 
 # mixins
 Tinytest.add prefixTest('mixins - remove'), (test) ->
